@@ -48,8 +48,8 @@ function Hstudent() {
      <h4>{currentUser ? currentUser : "Loading.."}</h4>
      <button onClick={updat}>Update</button>
      <button onClick={logout}>Logout</button>
+     </div>
      <LoadJobs></LoadJobs>
-    </div>
  <ToastContainer/>
   </HstudentWrapper>
   )
@@ -57,7 +57,8 @@ function Hstudent() {
 
 
 const HstudentWrapper = styled.div`
-  height: 100vh; 
+   width: 100vw;
+  height: 100vh; /* Full height of the viewport */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,7 +71,8 @@ const HstudentWrapper = styled.div`
     filter: drop-shadow(-1rem 1rem 1rem rgb(51, 51, 51));
     overflow-y: auto; /* Enables scrolling */
     scrollbar-width: none;
-    height: 100vh; 
+    
+    height: calc(100vh); /* Full height minus header */
   }
 
   .header {
@@ -120,7 +122,7 @@ const HstudentWrapper = styled.div`
 
   @media (max-width: 768px) {
     .mainbody {
-      width: 80vw;
+      width: 90vw;
       margin-top: 5rem; /* Adjust for smaller screens */
       height: calc(100vh - 5rem);
     }
