@@ -7,7 +7,7 @@ import "react-toastify/ReactToastify.css"
 import axios from "axios";
 import GLoadJobs from '../components/GLoadJobs';
 
-function Hcampus() {
+function Hgrad() {
   const navigate = useNavigate();
   const [currentUser,setCurrentUser]=useState(undefined);
   const [loadingUser,setLoadingUser]=useState(true);
@@ -40,7 +40,6 @@ function Hcampus() {
     },[])
   return (    
     <HstudentWrapper>
-      <div className='mainbody'>
     <div className='header'>
     <div className="brand">
          <img src={Logo} alt="" />
@@ -50,14 +49,14 @@ function Hcampus() {
      <button onClick={logout}>Logout</button>
     </div>
     <GLoadJobs></GLoadJobs>
-    </div>
  <ToastContainer/>
   </HstudentWrapper>
   )
 }
 
 const HstudentWrapper = styled.div`
- height: 100vh; 
+ width: 100vw;
+  height: 100vh; /* Full height of the viewport */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,12 +64,13 @@ const HstudentWrapper = styled.div`
 
   .mainbody {
     background-color: white;
-    width: 100vw;
+    width: 70vw;
     max-width: 100%; /* Ensures it fits on small screens */
     filter: drop-shadow(-1rem 1rem 1rem rgb(51, 51, 51));
     overflow-y: auto; /* Enables scrolling */
     scrollbar-width: none;
-    height: 100vh; 
+    
+    height: calc(100vh); /* Full height minus header */
   }
 
   .header {
@@ -120,7 +120,7 @@ const HstudentWrapper = styled.div`
 
   @media (max-width: 768px) {
     .mainbody {
-      width: 80vw;
+      width: 90vw;
       margin-top: 5rem; /* Adjust for smaller screens */
       height: calc(100vh - 5rem);
     }
@@ -130,4 +130,5 @@ const HstudentWrapper = styled.div`
   }
 `;
 
-export default Hcampus
+
+export default Hgrad
